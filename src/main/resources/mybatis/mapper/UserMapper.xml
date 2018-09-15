@@ -24,6 +24,17 @@
         WHERE ID = #{id}
     </select>
 
+    <select id="getUserByIdAndPasswd" resultType="User">
+        SELECT
+              id,
+              username,
+              passwd,
+              login_Ip
+        FROM user
+        WHERE ID = #{id}
+        AND passwd = #{passwd}
+    </select>
+
     <update id="updateUser">
         UPDATE user
         SET username = #{user.username},
